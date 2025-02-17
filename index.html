@@ -52,20 +52,26 @@
 
                 </ul>
                 <form class="d-flex10" role="search">
-                  <label class="switch10">
-                      <input type="checkbox" id="themeToggle">
-                      <span class="slider10 round10"></span>
-                  </label>
-              </form>
-          
-              <script>
-                  const toggle = document.getElementById('themeToggle');
-          
-                  toggle.addEventListener('change', () => {
-                      document.body.classList.toggle('dark', toggle.checked);
-                      document.body.classList.toggle('light', !toggle.checked);
-                  });
-              </script>
+    <label class="switch10">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider10 round10"></span>
+    </label>
+</form>
+
+<script>
+    // Set the initial theme to light
+    document.body.classList.add('light');
+
+    const toggle = document.getElementById('themeToggle');
+
+    // Ensure the checkbox is unchecked for light mode
+    toggle.checked = false;
+
+    toggle.addEventListener('change', () => {
+        document.body.classList.toggle('dark', toggle.checked);
+        document.body.classList.toggle('light', !toggle.checked);
+    });
+</script>
 
             </div>
           </nav>
